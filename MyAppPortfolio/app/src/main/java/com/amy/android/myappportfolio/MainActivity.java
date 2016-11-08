@@ -1,75 +1,61 @@
 package com.amy.android.myappportfolio;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+import butterknife.BindView;
+
+public class MainActivity extends AppCompatActivity
+{
+
+    @BindView(R.id.popularMovies_Btn) Button m_PopularMovieBtn;
+    @BindView(R.id.stockHawk_Btn) Button m_StockHawkBtn;
+    @BindView(R.id.buildItBigger_Btn) Button m_BuildItBiggerBtn;
+    @BindView(R.id.makeYourAppMaterial_Btn) Button m_MaterialBtn;
+    @BindView(R.id.goUbiquitous_Btn) Button m_GoUbiquitousBtn;
+    @BindView(R.id.capstone_Btn) Button m_CapstoneBtn;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        /*create button click listeners*/
-        // Popular Movies Button
-        Button m_PopularMovieBtn = (Button)findViewById(R.id.popularMovies_btn);
-        m_PopularMovieBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DisplayToast("This button will Launch the Popular Movies Project");
-            }
-        });
-        // Stock Hawk Button
-        Button m_StockHawkBtn = (Button)findViewById(R.id.stockHawk_Btn);
-        m_StockHawkBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DisplayToast("This button will Launch the Stock Hawk Project");
-            }
-        });
-        // Build It Bigger Button
-        Button m_BuildItBiggerBtn = (Button)findViewById(R.id.buildItBigger_Btn);
-        m_BuildItBiggerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DisplayToast("This button will Launch the Build It Bigger Project");
-            }
-        });
-        // Make Your App Material Button
-        Button m_MaterialBtn = (Button)findViewById(R.id.makeYourAppMaterial_Btn);
-        m_MaterialBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DisplayToast("This button will Launch the Make Your App Material Project");
-            }
-        });
-        // Go Ubiquitous Button
-        Button m_GoUbiquitousBtn = (Button)findViewById(R.id.goUbiquitous_Btn);
-        m_GoUbiquitousBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DisplayToast("This button will Launch the Go Ubiquitous Project");
-            }
-        });
-        // Capstone My Own App Button
-        Button m_CapstoneBtn = (Button)findViewById(R.id.capstone_btn);
-        m_CapstoneBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DisplayToast("This button will Launch the my Capstone Project");
-            }
-        });
     }
 
-    private void DisplayToast(String text)
+    public void displayToast(View v)
     {
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, text, duration);
+        Toast toast;
+        switch (v.getId())
+        {
+            case R.id.popularMovies_Btn:
+                toast = Toast.makeText(context, R.string.popular_movie_text, duration);
+                break;
+            case R.id.stockHawk_Btn:
+                toast = Toast.makeText(context, R.string.stock_hawk_text, duration);
+                break;
+            case R.id.buildItBigger_Btn:
+                toast = Toast.makeText(context, R.string.build_it_bigger_text, duration);
+                break;
+            case R.id.makeYourAppMaterial_Btn:
+                toast = Toast.makeText(context, R.string.make_material_text, duration);
+                break;
+            case R.id.goUbiquitous_Btn:
+                toast = Toast.makeText(context, R.string.go_ubiquitous_text, duration);
+                break;
+            case R.id.capstone_Btn:
+                toast = Toast.makeText(context, R.string.capstone_text, duration);
+                break;
+            default:
+                toast = Toast.makeText(context, "", duration);
+                break;
+        }
+
         toast.show();
     }
 

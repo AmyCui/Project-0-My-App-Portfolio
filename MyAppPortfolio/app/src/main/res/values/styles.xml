@@ -8,4 +8,19 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ButtonMainActivity" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:background">@color/colorFrontBtnBkg</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textColor">?android:attr/textColorSecondaryInverse</item>
+    </style>
+
+    <style name="ButtonAccentMainActivity" parent="@style/ButtonMainActivity">
+        <item name="android:background">@color/colorFrontBtnBkgAccent</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
 </resources>

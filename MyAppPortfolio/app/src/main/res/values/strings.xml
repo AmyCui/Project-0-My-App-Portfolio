@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">App Portfolio</string>
+    <string name="popular_movie_text">This button will Launch the Popular Movies Project</string>
+    <string name="stock_hawk_text">This button will Launch the Stock Hawk Project</string>
+    <string name="build_it_bigger_text">This button will Launch the Build It Bigger Project</string>
+    <string name="make_material_text">This button will Launch the Make Your App Material Project</string>
+    <string name="go_ubiquitous_text">This button will Launch the Go Ubiquitous Project</string>
+    <string name="capstone_text">This button will Launch the my Capstone Project</string>
+    <string name="title_text">My Nanodegree Apps</string>
 </resources>
